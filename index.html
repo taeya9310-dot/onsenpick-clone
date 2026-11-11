@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><meta name="description" content="일본의 새로운 취향을 발견하는 여행 큐레이션">
+<title>tabi — 일본을 여행하는 새로운 취향</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+:root{--ink:#202720;--muted:#777d73;--paper:#f7f6f2;--green:#315b46;--line:#e7e5dc;--lime:#dce8b9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans','Noto Sans KR',sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{max-width:1180px;margin:auto;padding:0 28px}
+header{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.logo{font-size:26px;font-weight:800;letter-spacing:-1.8px;color:var(--green)}.logo span{color:#a1ae7c}.nav{display:flex;gap:30px;font-size:13px;font-weight:600}.nav a:hover{color:var(--green)}.right{display:flex;align-items:center;gap:18px;font-size:13px}.login{border:1px solid #c9cec3;border-radius:30px;padding:10px 18px}
+.hero{padding:52px 0 34px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--green);font-weight:700}.hero h1{font-size:clamp(38px,6vw,70px);line-height:1.12;letter-spacing:-3px;margin:15px 0 14px;font-weight:700}.hero h1 em{font-style:normal;color:var(--green)}.hero p{color:var(--muted);font-size:15px;margin:0 0 28px}.hero-photo{height:390px;border-radius:5px;overflow:hidden;position:relative;background:#66715d}.hero-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.78)}.photo-copy{position:absolute;left:42px;bottom:36px;color:white}.photo-copy small{font-size:11px;letter-spacing:2px}.photo-copy h2{font-size:32px;line-height:1.25;margin:10px 0}.photo-copy p{color:#f2f2e8;font-size:13px;margin:0}
+.searchbox{position:relative;z-index:2;margin:-28px auto 0;background:white;max-width:850px;padding:13px;border-radius:5px;box-shadow:0 12px 40px #273b251a;display:flex;gap:10px}.searchbox input{border:0;outline:0;flex:1;padding:0 15px;min-width:0;font-size:14px}.searchbox button{border:0;background:var(--green);color:white;border-radius:3px;padding:15px 28px;font-weight:700;cursor:pointer}
+section{padding:66px 0}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:25px}.section-head small{color:var(--green);font-size:10px;letter-spacing:2px;font-weight:700}.section-head h2{font-size:29px;letter-spacing:-1px;margin:8px 0 0}.more{font-size:12px;color:var(--green);font-weight:700}
+.destinations{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.destination{height:190px;position:relative;overflow:hidden;border-radius:4px;background:#aaa}.destination img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.destination:hover img{transform:scale(1.06)}.destination:after{content:'';position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#0009)}.destination b{position:absolute;z-index:1;bottom:16px;left:16px;color:white;font-size:20px}.destination span{display:block;font-size:10px;font-weight:400;letter-spacing:1px;margin-top:3px}
+.feature{background:#eeeee7}.tiles{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}.tile{background:white;min-width:0}.tile img{width:100%;height:190px;object-fit:cover;display:block}.tile:first-child img{height:240px}.tile-body{padding:17px}.tag{font-size:10px;color:var(--green);font-weight:700;letter-spacing:1px}.tile h3{font-size:17px;margin:8px 0}.tile p{font-size:12px;line-height:1.6;color:var(--muted);margin:0}
+.plan{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}.plan img{width:100%;height:300px;object-fit:cover}.plan h2{font-size:34px;letter-spacing:-1.5px;line-height:1.25}.plan p{color:var(--muted);line-height:1.8;font-size:14px}.plan button{background:var(--green);color:white;border:0;padding:14px 22px;border-radius:3px;margin-top:12px;cursor:pointer}
+footer{background:#263b30;color:#e8eee5;padding:38px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px}.foot .logo{color:white}
+@media(max-width:760px){.wrap{padding:0 18px}header{height:65px}.nav{display:none}.right{gap:10px}.hero{padding-top:38px}.hero h1{letter-spacing:-2px}.hero-photo{height:300px}.photo-copy{left:22px;bottom:24px}.photo-copy h2{font-size:25px}.searchbox{margin:-20px 10px 0;padding:8px}.searchbox button{padding:13px 16px}.destinations{grid-template-columns:repeat(2,1fr)}.destination{height:155px}.destination:last-child{display:none}section{padding:48px 0}.section-head h2{font-size:24px}.tiles{grid-template-columns:1fr 1fr}.tile:first-child{grid-column:span 2}.tile img,.tile:first-child img{height:170px}.plan{grid-template-columns:1fr;gap:15px}.plan img{height:220px}.plan h2{font-size:29px}.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="logo" href="#">tabi<span>.</span></a><nav class="nav"><a href="#destinations">여행지</a><a href="#stories">여행 이야기</a><a href="#plans">추천 일정</a></nav><div class="right"><span>日本を旅しよう</span><a class="login" href="#plans">여행 시작하기 ↗</a></div></header>
+<main>
+<div class="hero"><div class="eyebrow">YOUR JAPAN, YOUR WAY</div><h1>취향 따라 떠나는<br><em>나만의 일본 여행</em></h1><p>익숙한 도시도 새롭게. 당신의 다음 일본을 발견해 보세요.</p>
+<div class="hero-photo"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1800&q=85" alt="교토의 전통 거리"><div class="photo-copy"><small>JAPAN, BEYOND THE ORDINARY</small><h2>골목 끝에서 만나는<br>새로운 일본</h2><p>여행자의 시선으로 발견한 일본의 순간들</p></div></div>
+<div class="searchbox"><input id="search" placeholder="어디로 떠나고 싶으세요? 예: 도쿄, 오사카, 벚꽃 여행"><button onclick="searchPlace()">여행지 찾기 ↗</button></div>
+</div>
+<section id="destinations"><div class="section-head"><div><small>EXPLORE BY AREA</small><h2>어디로 떠나볼까요?</h2></div><a class="more" href="#stories">모든 지역 보기 ↗</a></div>
+<div class="destinations">
+<a class="destination" href="#stories"><img src="https://images.unsplash.com/photo-1540959733332-eab4dezez7c?auto=format&fit=crop&w=600&q=80" alt="도쿄"><b>도쿄<span>TOKYO</span></b></a>
+<a class="destination" href="#stories"><img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80" alt="오사카"><b>오사카<span>OSAKA</span></b></a>
+<a class="destination" href="#stories"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="교토"><b>교토<span>KYOTO</span></b></a>
+<a class="destination" href="#stories"><img src="https://images.unsplash.com/photo-1570459027562-4a916cc6113f?auto=format&fit=crop&w=600&q=80" alt="후쿠오카"><b>후쿠오카<span>FUKUOKA</span></b></a>
+<a class="destination" href="#stories"><img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=600&q=80" alt="홋카이도"><b>홋카이도<span>HOKKAIDO</span></b></a>
+</div></section>
+<section class="feature" id="stories"><div class="wrap"><div class="section-head"><div><small>FIND YOUR INSPIRATION</small><h2>이번 여행의 취향을 발견하다</h2></div><a class="more" href="#plans">더 둘러보기 ↗</a></div>
+<div class="tiles">
+<article class="tile"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=900&q=80" alt="일본 거리"><div class="tile-body"><span class="tag">CITY & CULTURE</span><h3>도시의 리듬을 따라 걷는 하루</h3><p>오래된 상점가부터 감각적인 편집숍까지, 도시의 다채로운 얼굴을 만나보세요.</p></div></article>
+<article class="tile"><img src="https://images.unsplash.com/photo-1554797589-7241bb691973?auto=format&fit=crop&w=700&q=80" alt="일본 음식"><div class="tile-body"><span class="tag">FOOD & LOCAL</span><h3>현지인의 단골 맛집</h3><p>여행의 기억을 더 진하게 만드는 한 끼와 동네의 맛.</p></div></article>
+<article class="tile"><img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80" alt="일본 야경"><div class="tile-body"><span class="tag">NIGHT & SCENE</span><h3>밤이 더 아름다운 일본</h3><p>해가 진 뒤 시작되는 또 다른 여행의 순간들.</p></div></article>
+</div></div></section>
+<section id="plans"><div class="plan"><img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1000&q=85" alt="일본 후지산 풍경"><div><div class="eyebrow">MADE FOR YOUR NEXT TRIP</div><h2>여행 계획이 막막할 땐<br>추천 코스부터</h2><p>짧은 주말 여행부터 여유로운 일주일까지. 지역과 취향에 맞춘 여행 아이디어로 다음 여정을 시작해 보세요.</p><button onclick="alert('추천 일정 기능을 준비하고 있어요!')">추천 일정 둘러보기 ↗</button></div></div></section>
+</main>
+</div>
+<footer><div class="wrap foot"><a class="logo" href="#">tabi.</a><span>당신의 취향으로 완성하는 일본 여행</span><span>© 2026 tabi. All rights reserved.</span></div></footer>
+<script>
+function searchPlace(){const q=document.getElementById('search').value.trim();if(!q){document.getElementById('search').focus();return}document.getElementById('destinations').scrollIntoView({behavior:'smooth'});document.querySelector('#destinations h2').textContent='“'+q+'” 여행지를 둘러보세요'}
+</script>
+</body></html>
