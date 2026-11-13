@@ -20,6 +20,7 @@ function render(){const q=$('q').value.trim().toLowerCase(),r=$('region').value,
 function esc(v){return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 ['q','region','category','sort'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',render));
 $('regionChips').innerHTML='<button class="chip active" data-region="">전체</button>'+regions.map(r=>'<button class="chip" data-region="'+esc(r)+'">'+esc(r)+'</button>').join('');
+document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.region===$('region').value));
 $('regionChips').addEventListener('click',e=>{const b=e.target.closest('button[data-region]');if(!b)return;$('region').value=b.dataset.region;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));render()});
 $('region').addEventListener('change',()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.region===$('region').value));});render();
 </script></body></html>
