@@ -32,12 +32,30 @@ footer{background:#263b30;color:#e8eee5;padding:38px 0;font-size:12px}.foot{disp
 <main>
 <div class="hero"><div class="eyebrow">YOUR JAPAN, YOUR WAY</div><h1>취향 따라 떠나는<br><em>나만의 일본 여행</em></h1><p>익숙한 도시도 새롭게. 당신의 다음 일본을 발견해 보세요.</p>
 <div class="hero-photo"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1800&q=85" alt="교토의 전통 거리"><div class="photo-copy"><small>JAPAN, BEYOND THE ORDINARY</small><h2>골목 끝에서 만나는<br>새로운 일본</h2><p>여행자의 시선으로 발견한 일본의 순간들</p></div></div>
-<div class="searchbox"><input id="search" placeholder="어디로 떠나고 싶으세요? 예: 도쿄, 오사카, 벚꽃 여행"><button onclick="searchPlace()">여행지 찾기 ↗</button></div>
+<div class="searchbox"><input id="search" placeholder="지역을 입력하세요. 예: 후쿠오카, 오키나와, 마쓰야마" onkeydown="if(event.key===&quot;Enter&quot;)searchPlace()"><button onclick="searchPlace()">여행지 찾기 ↗</button></div>
 </div>
 
 <section class="recovery-notice" aria-label="공지사항">
 <a class="recovery-notice-link" href="/recovery.html"><span>일본 여행 시 회복용 꿀템 13가지</span><span>↗</span></a>
 </section>
+<script>
+async function searchPlace(){
+ const input=document.getElementById('search');
+ const query=input.value.trim();
+ if(!query){input.focus();return}
+ try{
+  const response=await fetch('/api/places',{cache:'no-store'});
+  if(!response.ok) throw new Error('region api unavailable');
+  const data=await response.json();
+  const places=Array.isArray(data.places)?data.places:[];
+  const regions=[...new Set(places.map(p=>p.region).filter(Boolean))];
+  const q=query.replace(/\s+/g,'').toLowerCase();
+  const matches=regions.filter(r=>r.replace(/\s+/g,'').toLowerCase()===q);
+  if(matches.length===1){location.href='/places.html?region='+encodeURIComponent(matches[0]);return}
+  location.href='/places.html?q='+encodeURIComponent(query);
+ }catch(error){location.href='/places.html?q='+encodeURIComponent(query)}
+}
+</script>
 </main>
 </div>
 </body>
