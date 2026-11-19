@@ -10,7 +10,7 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans','Noto Sans KR',sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{max-width:1180px;margin:auto;padding:0 28px}
 header{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.logo{font-size:26px;font-weight:800;letter-spacing:-1.8px;color:var(--green)}.logo span{color:#a1ae7c}.nav{display:flex;gap:30px;font-size:13px;font-weight:600}.nav a:hover{color:var(--green)}.right{display:flex;align-items:center;gap:18px;font-size:13px}.login{border:1px solid #c9cec3;border-radius:30px;padding:10px 18px}
 .hero{padding:52px 0 34px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--green);font-weight:700}.hero h1{font-size:clamp(38px,6vw,70px);line-height:1.12;letter-spacing:-3px;margin:15px 0 14px;font-weight:700}.hero h1 em{font-style:normal;color:var(--green)}.hero p{color:var(--muted);font-size:15px;margin:0 0 28px}.hero-photo{height:390px;border-radius:5px;overflow:hidden;position:relative;background:#66715d}.hero-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.78)}.photo-copy{position:absolute;left:42px;bottom:36px;color:white}.photo-copy small{font-size:11px;letter-spacing:2px}.photo-copy h2{font-size:32px;line-height:1.25;margin:10px 0}.photo-copy p{color:#f2f2e8;font-size:13px;margin:0}
-.region-section{padding:42px 0 62px}.region-section h2{font-size:26px;letter-spacing:-1px;margin:0 0 8px}.region-section p{margin:0 0 22px;color:var(--muted);font-size:13px}.region-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.region-link{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:76px;padding:18px 19px;background:#fff;border:1px solid var(--line);border-radius:5px;font-size:16px;font-weight:700;transition:.18s}.region-link:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px);box-shadow:0 8px 20px #273b2510}.region-link span:last-child{color:var(--green);font-size:19px;font-weight:400}@media(max-width:760px){.region-section{padding:30px 0 45px}.region-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.region-link{min-height:65px;padding:14px;font-size:14px}}
+.region-section{padding:8px 0 42px}.region-grid{display:flex;flex-wrap:wrap;gap:8px}.region-link{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:40px;padding:9px 15px;background:#fff;border:1px solid #e1e6df;border-radius:12px;font-size:13px;font-weight:600;color:#35463a;white-space:nowrap;transition:all .16s}.region-link:hover{border-color:#a9bcae;background:#f7faf7;color:var(--green);transform:translateY(-1px)}.region-link .region-count{color:#657269;font-weight:500}.region-link span:last-child{display:none}@media(max-width:760px){.region-section{padding:8px 0 32px}.region-grid{gap:7px}.region-link{min-height:38px;padding:8px 12px;font-size:12px}}
 section{padding:66px 0}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:25px}.section-head small{color:var(--green);font-size:10px;letter-spacing:2px;font-weight:700}.section-head h2{font-size:29px;letter-spacing:-1px;margin:8px 0 0}.more{font-size:12px;color:var(--green);font-weight:700}
 .destinations{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.destination{height:190px;position:relative;overflow:hidden;border-radius:4px;background:#aaa}.destination img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.destination:hover img{transform:scale(1.06)}.destination:after{content:'';position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#0009)}.destination b{position:absolute;z-index:1;bottom:16px;left:16px;color:white;font-size:20px}.destination span{display:block;font-size:10px;font-weight:400;letter-spacing:1px;margin-top:3px}
 .feature{background:#eeeee7}.tiles{display:grid;grid-template-columns:1fr;gap:16px}.tile{background:white;min-width:0}.tile img{width:100%;height:190px;object-fit:cover;display:block}.tile:first-child img{height:300px}.tile-body{padding:17px}.tag{font-size:10px;color:var(--green);font-weight:700;letter-spacing:1px}.tile h3{font-size:17px;margin:8px 0}.tile p{font-size:12px;line-height:1.6;color:var(--muted);margin:0}
@@ -34,10 +34,8 @@ footer{background:#263b30;color:#e8eee5;padding:38px 0;font-size:12px}.foot{disp
 <div class="hero-photo"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1800&q=85" alt="교토의 전통 거리"><div class="photo-copy"><small>JAPAN, BEYOND THE ORDINARY</small><h2>골목 끝에서 만나는<br>새로운 일본</h2><p>여행자의 시선으로 발견한 일본의 순간들</p></div></div>
 
 </div>
-<section class="region-section" id="destinations">
-<h2>어디로 떠나볼까요?</h2>
-<p>가고 싶은 지역을 선택하면 해당 지역의 여행 장소를 볼 수 있어요.</p>
-<div class="region-grid" id="regionGrid"><a class="region-link" href="/places.html">전체 지역 보기 <span>↗</span></a></div>
+<section class="region-section" id="destinations" aria-label="지역별 여행지">
+<div class="region-grid" id="regionGrid"></div>
 </section>
 <script>
 (async function loadRegions(){
@@ -47,12 +45,16 @@ footer{background:#263b30;color:#e8eee5;padding:38px 0;font-size:12px}.foot{disp
   if(!response.ok) throw new Error('지역 정보를 불러오지 못했습니다.');
   const data=await response.json();
   const places=Array.isArray(data.places)?data.places:[];
-  const regions=[...new Set(places.map(p=>p.region).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ko'));
-  if(!regions.length) return;
-  grid.innerHTML=regions.map(region=>'<a class="region-link" href="/places.html?region='+encodeURIComponent(region)+'">'+region+' <span>↗</span></a>').join('');
- }catch(error){
-  grid.innerHTML='<a class="region-link" href="/places.html">전체 지역 보기 <span>↗</span></a>';
- }
+  const counts={};
+  places.forEach(place=>{if(place.region) counts[place.region]=(counts[place.region]||0)+1});
+  const preferred=['고치시','교토','구로카와','기후','나가사키','다카마쓰','도쿄','마쓰야마','미확인','벳푸','시즈오카','오사카','오이타','오키나와','유후인','하코네','후쿠오카','훗카이도','히로시마'];
+  const regions=Object.keys(counts).sort((a,b)=>{
+   const ai=preferred.indexOf(a),bi=preferred.indexOf(b);
+   if(ai<0&&bi<0)return a.localeCompare(b,'ko');
+   if(ai<0)return 1;if(bi<0)return -1;return ai-bi;
+  });
+  grid.innerHTML=regions.map(region=>'<a class="region-link" href="/places.html?region='+encodeURIComponent(region)+'">'+region+' <span class="region-count">('+counts[region]+')</span></a>').join('');
+ }catch(error){grid.innerHTML='';}
 })();
 </script>
 
