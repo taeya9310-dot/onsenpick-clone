@@ -35,7 +35,7 @@ export default async function handler(req, res) {
       if (!response.ok) return res.status(response.status).json({ error: data.message || 'Notion API request failed' });
       for (const page of data.results || []) {
         const p = page.properties || {};
-        const name = value(p['이름']);
+        const name = value(p['이름']).replace(/\\/g, '');
         if (!name) continue;
         places.push({
           name,
