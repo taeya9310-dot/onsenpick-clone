@@ -3,7 +3,7 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
   const token = process.env.NOTION_API_KEY;
-  const databaseId = process.env.NOTION_DATABASE_ID || 'c1336038-2495-48aa-bb67-cd6a1ceb82e1';
+  const dataSourceId = process.env.NOTION_DATA_SOURCE_ID || '429bd022-a005-4ab5-a411-1ee8c4c085c7';
   if (!token) return res.status(503).json({ error: 'Notion integration is not configured' });
 
   const text = (items) => (items || []).map(x => x.plain_text || x.text?.content || '').join('');
@@ -22,11 +22,11 @@ export default async function handler(req, res) {
     const places = [];
     let cursor;
     do {
-      const response = await fetch(`https://api.notion.com/v1/databases/${databaseId}/query`, {
+      const response = await fetch(`https://api.notion.com/v1/data_sources/${dataSourceId}/query`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
-          'Notion-Version': '2022-06-28',
+          'Notion-Version': '2025-09-03',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ page_size: 100, ...(cursor ? { start_cursor: cursor } : {}) })
@@ -41,7 +41,8 @@ export default async function handler(req, res) {
           id: page.id.replace(/-/g, ''),
           name,
           region: value(p['지역']),
-          category: value(p['카테고리']),
+          category: value(p['대분류']),
+          subcategory: value(p['중분류']),
           note: value(p['메모']),
           map: value(p['구글맵']),
           notion: page.url || '',
