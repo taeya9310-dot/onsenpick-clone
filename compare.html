@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f7f6f2"><title>숙소 요금 비교 — Taeya's Log</title>
+<meta name="theme-color" content="#f7f6f2"><title>숙소 가격 비교 — Taeya's Log</title>
 <style>
 :root{--ink:#202820;--muted:#788078;--paper:#f6f7f3;--white:#fff;--green:#315d48;--line:#e5e9e2;--gold:#c4a66a}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,'Noto Sans KR',sans-serif}.wrap{max-width:1000px;margin:auto;padding:0 22px}header{height:70px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.logo{font-size:22px;font-weight:800;color:var(--green);text-decoration:none}.back{font-size:13px;color:var(--green);text-decoration:none;font-weight:700}.hero{padding:42px 0 24px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--green);font-weight:800}.hero h1{font-size:clamp(28px,5vw,40px);letter-spacing:-1.5px;margin:9px 0}.hero p{font-size:13px;color:var(--muted);line-height:1.8;margin:0}.panel{background:white;border:1px solid var(--line);border-radius:15px;padding:20px;margin:16px 0}.panel h2{font-size:17px;margin:0 0 15px}.hotel{font-size:18px;font-weight:800;color:var(--green);margin-bottom:8px}.formgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.field label{display:block;font-size:11px;font-weight:700;color:#566158;margin-bottom:6px}.field input,.field select{width:100%;padding:12px;border:1px solid #dfe5dc;border-radius:9px;background:#fbfcfa;font:inherit;font-size:13px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;padding:12px 15px;background:var(--green);color:white;font-size:12px;font-weight:800;text-decoration:none;cursor:pointer}.btn.secondary{background:#edf3ed;color:var(--green)}.providers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.provider{background:white;border:1px solid var(--line);border-radius:13px;padding:16px;display:flex;flex-direction:column;gap:10px}.provider h3{margin:0;font-size:16px}.provider p{font-size:11px;color:var(--muted);line-height:1.6;margin:0;min-height:36px}.provider .btn{width:100%;min-height:42px}.pricebox{border-top:1px solid var(--line);padding-top:12px;margin-top:2px}.pricebox label{display:block;font-size:11px;color:#566158;font-weight:700;margin-bottom:6px}.pricebox input{width:100%;padding:11px;border:1px solid #dfe5dc;border-radius:8px;font:inherit;font-size:13px}.result{margin-top:14px;padding:14px;border-radius:10px;background:#f2f6f1;font-size:13px;line-height:1.7}.result strong{color:var(--green)}.note{font-size:11px;line-height:1.8;color:var(--muted)}.error{color:#a33;font-size:12px;margin-top:8px;display:none}footer{padding:28px 0 42px;color:var(--muted);font-size:11px}
@@ -10,8 +10,8 @@
 </style>
 </head>
 <body><div class="wrap">
-<header><a class="logo" href="/">Taeya's Log.</a><a class="back" href="/places.html">← 숙소 리스트</a></header>
-<section class="hero"><div class="eyebrow">STAY PRICE CHECK</div><h1>숙소 요금 비교</h1><p>같은 숙소·날짜·인원으로 예약처를 확인하고, 세금과 취소 조건까지 비교해 보세요.</p></section>
+<header><a class="logo" href="/">Taeya's Log.</a><nav style="display:flex;gap:18px;align-items:center;font-size:13px;font-weight:700"><a class="back" href="/places.html">장소 리스트</a><a class="back" href="/compare.html" aria-current="page">숙소 가격 비교</a></nav></header>
+<section class="hero"><div class="eyebrow">STAY PRICE CHECK</div><h1>숙소 가격 비교</h1><p>같은 숙소·날짜·인원으로 예약처를 확인하고, 세금과 취소 조건까지 비교해 보세요.</p></section>
 <section class="panel"><h2>① 숙박 조건</h2><div class="hotel" id="hotelName">숙소명</div>
 <div class="formgrid">
 <div class="field"><label for="checkin">체크인</label><input type="date" id="checkin" required></div>
