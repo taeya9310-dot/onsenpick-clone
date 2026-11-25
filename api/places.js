@@ -38,6 +38,7 @@ export default async function handler(req, res) {
         const name = value(p['이름']).replace(/\\/g, '');
         if (!name) continue;
         places.push({
+          id: page.id.replace(/-/g, ''),
           name,
           region: value(p['지역']),
           category: value(p['카테고리']),
